@@ -32,7 +32,15 @@ app.get('/employee', (req, res) => {
 });
 
 app.get('/ez', (req, res) => {
-    res.send('XD EZZZZZ');
+    res.send([
+        {
+            "id": "1",
+            "name": "Hamburger"
+        }, {
+            "id": "2",
+            "name": "Pizza"
+        }
+    ]);
 })
 
 app.post('/create', (req, res) => {

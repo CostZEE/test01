@@ -11,6 +11,11 @@ function App() {
 
   const [employeeList, setemployeeList] = useState([]);
 
+  const trytest = async() => {
+    const response = await axios.get("https://nodejs-test01.vercel.app/trytest");
+    console.log(response);
+  }
+
   const getEmployees = async () => {
     const response = await axios.get("https://nodejs-test01.vercel.app/employee");
     setemployeeList(response.data);
@@ -146,6 +151,9 @@ function App() {
       </div>
       <hr />
       <div className="employee">
+        <button className="btn btn-warning" onClick={() => trytest()}>
+          Test
+        </button>
         <button className="btn btn-primary" onClick={() => getEmployees()}>
           Show
         </button>
