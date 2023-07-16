@@ -31,6 +31,10 @@ app.get('/employee', (req, res) => {
     });
 });
 
+app.get('/ez', (req, res) => {
+    res.send('XD EZZZZZ');
+})
+
 app.post('/create', (req, res) => {
     const name = req.body.name;
     const age = req.body.age;
