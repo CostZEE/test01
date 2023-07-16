@@ -154,11 +154,11 @@ function App() {
           return (
             <div className="employee card" key={list.id}>
               <div className="card-body text-left">
-                <p className="card-text">Name: {list.name}</p>
-                <p className="card-text">Age: {list.age}</p>
-                <p className="card-text">Country: {list.country}</p>
-                <p className="card-text">Position: {list.position}</p>
-                <p className="card-text">Salary: {list.salary}</p>
+                <p className="card-text">Name : {list.name}</p>
+                <p className="card-text">Age : {list.age}</p>
+                <p className="card-text">Country : {list.country}</p>
+                <p className="card-text">Position : {list.position}</p>
+                <p className="card-text">Salary : {list.salary}</p>
                 <div className="d-flex">
                   <input
                     type="number"
