@@ -17,6 +17,10 @@ const db = mysql.createConnection({
     database: "employeeSystem",
 });
 
+app.get('/', (req, res) => {
+    res.send('Running');
+})
+
 app.get('/employee', (req, res) => {
     db.query("SELECT * FROM employee", (err, result) => {
         if (err) {
@@ -74,3 +78,5 @@ app.post('/delete', (req, res) => {
 app.listen('3001', () => {
     console.log('Server is running on port 3001');
 });
+
+module.exports = app;
