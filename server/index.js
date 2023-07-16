@@ -31,7 +31,7 @@ app.get('/employee', (req, res) => {
     });
 });
 
-app.get('/ez', (req, res) => {
+app.get('/trytest', (req, res) => {
     res.send([
         {
             "id": "1",
