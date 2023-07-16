@@ -75,8 +75,8 @@ app.post('/delete', (req, res) => {
         })
 });
 
-app.listen('3001', () => {
-    console.log('Server is running on port 3001');
+app.listen('3306', () => {
+    console.log('Server is running on port 3306');
 });
 
 module.exports = app;
