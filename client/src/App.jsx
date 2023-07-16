@@ -12,12 +12,12 @@ function App() {
   const [employeeList, setemployeeList] = useState([]);
 
   const getEmployees = async () => {
-    const response = await axios.get("http://localhost:3001/employee");
+    const response = await axios.get("https://nodejs-test01.vercel.app/employee");
     setemployeeList(response.data);
   };
 
   const addEmployee = async () => {
-    const response = await axios.post("http://localhost:3001/create", {
+    const response = await axios.post("https://nodejs-test01.vercel.app/create", {
       name: name,
       age: age,
       country: country,
@@ -37,7 +37,7 @@ function App() {
   };
 
   const updateEmployee = async (id) => {
-    const response = await axios.post("http://localhost:3001/update", {
+    const response = await axios.post("https://nodejs-test01.vercel.app/update", {
       salary: newsalary,
       id: id,
     });
@@ -59,7 +59,7 @@ function App() {
   };
 
   const deleteEmployee = async (id) => {
-    const response = await axios.post("http://localhost:3001/delete", {
+    const response = await axios.post("https://nodejs-test01.vercel.app/delete", {
       id: id,
     });
     setemployeeList(
