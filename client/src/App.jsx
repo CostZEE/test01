@@ -29,16 +29,17 @@ function App() {
       position: position,
       salary: salary,
     });
-    setemployeeList([
-      ...employeeList,
-      {
-        name: name,
-        age: age,
-        country: country,
-        position: position,
-        salary: salary,
-      },
-    ]);
+    getEmployees();
+    // setemployeeList([
+    //   ...employeeList,
+    //   {
+    //     name: name,
+    //     age: age,
+    //     country: country,
+    //     position: position,
+    //     salary: salary,
+    //   },
+    // ]);
   };
 
   const updateEmployee = async (id) => {
