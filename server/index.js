@@ -22,7 +22,7 @@ const db = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
-    res.send('RunningggggggX');
+    res.send('RunningggggggXCors');
 })
 
 app.get('/employee', (req, res) => {
