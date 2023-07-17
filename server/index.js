@@ -11,10 +11,10 @@ const cors = require('cors');
 app.use(express.json());
 
 const db = mysql.createConnection({
-    user: "epiz_34225349",
-    host: "sql204.infinityfree.com",
-    password: "RdAmyres6t2",
-    database: "epiz_34225349_delivery",
+    user: "sql6633264",
+    host: "sql6.freemysqlhosting.net",
+    password: "Q7DEWQRXmF",
+    database: "sql6633264",
 });
 
 app.get('/', (req, res) => {
