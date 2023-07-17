@@ -7,7 +7,11 @@ const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://test01-chi-wheat.vercel.app/',
+    credentials: true,
+}
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const db = mysql.createConnection({
