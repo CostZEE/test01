@@ -1,14 +1,11 @@
-// import express from "express";
-// const app = express();
-// import mysql from "mysql";
-// import cors from "cors";
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'https://test01-chi-wheat.vercel.app',
+    // origin: 'https://test01-chi-wheat.vercel.app',
+    origin: '*',
     credentials: true,
 }
 app.use(cors(corsOptions));
@@ -22,18 +19,8 @@ const db = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
-    res.send('RunningggggggXCors');
+    res.send('Server is Running');
 })
-
-app.get('/employee', (req, res) => {
-    db.query("SELECT * FROM employee", (err, result) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
 
 app.get('/trytest', (req, res) => {
     res.send([
@@ -47,49 +34,59 @@ app.get('/trytest', (req, res) => {
     ]);
 })
 
-app.post('/create', (req, res) => {
-    const name = req.body.name;
-    const age = req.body.age;
-    const country = req.body.country;
-    const position = req.body.position;
-    const salary = req.body.salary;
+// app.get('/employee', (req, res) => {
+//     db.query("SELECT * FROM employee", (err, result) => {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             res.send(result);
+//         }
+//     });
+// });
 
-    db.query("INSERT INTO employee (name, age, country, position, salary) VALUES (?,?,?,?,?)",
-        [name, age, country, position, salary],
-        (err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                res.send(result);
-            }
-        }
-    );
-});
+// app.post('/create', (req, res) => {
+//     const name = req.body.name;
+//     const age = req.body.age;
+//     const country = req.body.country;
+//     const position = req.body.position;
+//     const salary = req.body.salary;
 
-app.post('/update', (req, res) => {
-    const id = req.body.id;
-    const salary = req.body.salary;
-    db.query("UPDATE employee SET salary = ? WHERE id = ?", [salary, id],
-        (err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                res.send(result);
-            }
-        })
-});
+//     db.query("INSERT INTO employee (name, age, country, position, salary) VALUES (?,?,?,?,?)",
+//         [name, age, country, position, salary],
+//         (err, result) => {
+//             if (err) {
+//                 console.log(err);
+//             } else {
+//                 res.send(result);
+//             }
+//         }
+//     );
+// });
 
-app.post('/delete', (req, res) => {
-    const id = req.body.id;
-    db.query("DELETE FROM employee WHERE id = ?", [id],
-        (err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                res.send(result);
-            }
-        })
-});
+// app.post('/update', (req, res) => {
+//     const id = req.body.id;
+//     const salary = req.body.salary;
+//     db.query("UPDATE employee SET salary = ? WHERE id = ?", [salary, id],
+//         (err, result) => {
+//             if (err) {
+//                 console.log(err);
+//             } else {
+//                 res.send(result);
+//             }
+//         })
+// });
+
+// app.post('/delete', (req, res) => {
+//     const id = req.body.id;
+//     db.query("DELETE FROM employee WHERE id = ?", [id],
+//         (err, result) => {
+//             if (err) {
+//                 console.log(err);
+//             } else {
+//                 res.send(result);
+//             }
+//         })
+// });
 
 app.listen('3306', () => {
     console.log('Server is running on port 3306');
